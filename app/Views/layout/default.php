@@ -6,7 +6,7 @@ $vite = new Vite();
 $tags = $vite->tags(
     "main.ts",
 )
-?>
+    ?>
 
 <!DOCTYPE html>
 <html lang="en" data-page="<?= isset($page) ? $page : "" ?>">
@@ -25,12 +25,12 @@ $tags = $vite->tags(
     <?= $this->include('data-privacy') ?>
 
     <header id="header"
-        class="sticky inset-x-0 top-0 z-50 bg-black/80 backdrop-blur-[18px] backdrop-saturate-[185%] rounded-[0px] border-b border-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.35),inset_0_1px_0_rgba(255,255,255,0.08)] text-white transition-colors duration-300">
+        class="sticky inset-x-0 top-0 z-50 border-b border-gray-200 bg-white text-black shadow-none transition-colors duration-300">
         <nav class="mx-auto flex flex-wrap items-center justify-between max-w-7xl px-6 py-4">
 
             <!-- Logo -->
             <a href="/" class="shrink-0" aria-label="Home">
-                <img id="header-logo" class="w-40 h-auto" src="/static/toyota-baguio.png" alt="Logo" />
+                <img id="header-logo" class="w-50 h-auto" src="/static/toyota-ilocos-norte-logo.jpeg" alt="Logo" />
             </a>
 
             <!-- Mobile toggle and schedule button -->
@@ -79,16 +79,8 @@ $tags = $vite->tags(
                     <?php foreach ($links as $key => $value): ?>
                         <?php $isActive = url_is($value); ?>
 
-                        <a href="<?= $value ?>" <?= $isActive ? 'aria-current="page"' : '' ?> class="group relative isolate inline-flex overflow-hidden rounded-none
-           px-4 py-2 font-medium whitespace-nowrap
-           transition-colors duration-300 hover:text-white
-           focus-visible:outline focus-visible:outline-2
-           focus-visible:outline-offset-4 focus-visible:outline-red-600
-           <?= $isActive ? 'text-white' : 'text-current' ?>">
-                            <span aria-hidden="true" class="absolute inset-0 -z-10 origin-bottom bg-red-600
-               motion-safe:transition-transform motion-safe:duration-200s
-               <?= $isActive ? 'scale-y-100' : 'scale-y-0 group-hover:scale-y-100' ?>"></span>
-
+                        <a class="<?= $isActive ? 'underline decoration-red-600 ' : '' ?>text-current font-medium whitespace-nowrap hover:underline hover:decoration-red-600 underline-offset-2"
+                            href="<?= $value ?>">
                             <?= $key ?>
                         </a>
                     <?php endforeach; ?>
