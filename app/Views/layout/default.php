@@ -77,12 +77,12 @@ $tags = $vite->tags(
                     ?>
 
                     <?php foreach ($links as $key => $value): ?>
-                        <?php $isActive = url_is($value); ?>
+                    <?php $isActive = url_is($value); ?>
 
-                        <a class="<?= $isActive ? 'underline decoration-red-600 ' : '' ?>text-current font-medium whitespace-nowrap hover:underline hover:decoration-red-600 underline-offset-2"
-                            href="<?= $value ?>">
-                            <?= $key ?>
-                        </a>
+                    <a class="<?= $isActive ? 'underline decoration-red-600 ' : '' ?>text-current font-medium whitespace-nowrap hover:underline hover:decoration-red-600 underline-offset-2"
+                        href="<?= $value ?>">
+                        <?= $key ?>
+                    </a>
                     <?php endforeach; ?>
                 </div>
             </div>
@@ -97,9 +97,9 @@ $tags = $vite->tags(
         <div class="max-w-7xl mx-auto px-4">
             <div class="grid grid-cols-5 md:grid-cols-5 items-start gap-6">
                 <div class="col-span-2">
-                    <img src="/static/toyota-baguio.png" class="h-14 bg-center w-auto" />
+                    <img src="/static/" class="h-14 bg-center w-auto" />
                     <p class="text-gray-300 text-sm pt-2">
-                        Baguio City, 2600
+                        Diversion Road, Brgy. San Miguel, Calasiao, Pangasinan 2418
                     </p>
                 </div>
                 <div>
@@ -145,10 +145,13 @@ $tags = $vite->tags(
             <hr class="my-6 border-red-600" />
             <div class="flex flex-col md:flex-row justify-between items-center text-xs text-gray-400 gap-2">
                 <p>© 2026 <?= $config['SITE_NAME']->value ?>. All rights reserved.</p>
-                <p>Powered by BStech Solutions</p>
+                <a href="https://bstech-solutions.com/" target="_blank" rel="noopener noreferrer">Made With Passion and
+                    Commitment by BSTech Solutions</a>
+
             </div>
         </div>
     </footer>
+
 
     <!-- <script>
         const header = document.getElementById("header");

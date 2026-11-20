@@ -3,27 +3,16 @@
 <?= $this->section("mainContent"); ?>
 
 <!-- Contact Us Section -->
-<section class="relative bg-black text-white">
+<section class="relative bg-gray-300 text-black">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
         <h1 class="text-4xl md:text-5xl font-bold mt-4 mb-4">Contact Us</h1>
     </div>
 </section>
 
 
+
 <section class="bg-zinc-100 px-4 py-16 sm:px-6 md:py-24 lg:px-8" aria-labelledby="contact-heading">
     <div class="mx-auto max-w-6xl">
-
-        <!-- Heading -->
-        <header class="mb-10 md:mb-12">
-            <span class="text-xs font-bold uppercase tracking-[0.2em] text-red-600">
-                Contact us
-            </span>
-
-            <h2 id="contact-heading"
-                class="mt-3 text-3xl font-bold tracking-tight text-zinc-900 sm:text-4xl md:text-5xl">
-                We'd love to hear from you!
-            </h2>
-        </header>
 
         <div
             class="grid overflow-hidden rounded-none  border border-zinc-200 bg-white shadow-sm lg:grid-cols-[5fr_6fr]">

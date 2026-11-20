@@ -2,11 +2,12 @@
 <?= $this->section("mainContent"); ?>
 
 
-<section class="relative bg-black text-white">
+<section class="relative bg-gray-300 text-black">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
-        <h1 class="text-4xl md:text-5xl font-bold mt-4 mb-4">Schedule Now</h1>
+        <h1 class="text-4xl md:text-5xl font-bold mt-4 mb-4">Vehicle Name</h1>
     </div>
 </section>
+
 
 <div x-data="vehiclePage()">
     <!-- Main Layout -->
@@ -35,10 +36,10 @@
                     </p>
                     <div class="flex justify-center lg:justify-start gap-3">
                         <?php foreach ($cc->assets as $asset): ?>
-                            <button
-                                @click="activeImage = 'uploads/img/variants/<?= $asset['variant_filename'] ?>'; isLoading: true;"
-                                style="background-color: <?= $asset['color_hex_value'] ?>;"
-                                class="w-8 h-8 rounded-full border hover:scale-95"></button>
+                        <button
+                            @click="activeImage = 'uploads/img/variants/<?= $asset['variant_filename'] ?>'; isLoading: true;"
+                            style="background-color: <?= $asset['color_hex_value'] ?>;"
+                            class="w-8 h-8 rounded-full border hover:scale-95"></button>
                         <?php endforeach; ?>
                     </div>
                 </div>
@@ -52,15 +53,15 @@
                 </div>
 
                 <?php if ($cc->variant_isshowprice): ?>
-                    <!-- Pricing -->
-                    <div class="space-y-1">
-                        <p class="text-xs tracking-widest text-gray-500">STARTS AT</p>
-                        <p class="text-3xl font-semibold">
-                            PHP <?= number_format($cc->variant_price) ?><span class="text-sm font-normal">*</span>
-                            <span class="text-sm text-gray-500">MSRP</span>
-                        </p>
-                        <p class="text-sm text-gray-600">PHP <?= number_format($cc->variant_price_month) ?>* / mo</p>
-                    </div>
+                <!-- Pricing -->
+                <div class="space-y-1">
+                    <p class="text-xs tracking-widest text-gray-500">STARTS AT</p>
+                    <p class="text-3xl font-semibold">
+                        PHP <?= number_format($cc->variant_price) ?><span class="text-sm font-normal">*</span>
+                        <span class="text-sm text-gray-500">MSRP</span>
+                    </p>
+                    <p class="text-sm text-gray-600">PHP <?= number_format($cc->variant_price_month) ?>* / mo</p>
+                </div>
                 <?php endif ?>
 
                 <!-- Disclaimer -->
@@ -109,48 +110,49 @@
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
             <!-- Card -->
             <?php foreach ($variants as $row): ?>
-                <div x-data="{ activeImage: 'uploads/img/variants/<?= $row->variant_filename ?>', isLoading: true}"
-                    class="space-y-4">
-                    <div class="w-full max-w-4xl aspect-21/9 lg:aspect-video flex justify-center items-center">
-                        <img @load="isLoading = false" x-cloak x-show="!isLoading" :src="activeImage"
-                            class="w-full h-full object-contain" alt="" />
-                        <div x-show="isLoading"
-                            class="m-auto animate-spin inline-block size-8 border-3 border-current border-t-transparent rounded-[999px] text-primary"
-                            role="status" aria-label="loading">
-                            <span class="sr-only">Loading...</span>
-                        </div>
+            <div x-data="{ activeImage: 'uploads/img/variants/<?= $row->variant_filename ?>', isLoading: true}"
+                class="space-y-4">
+                <div class="w-full max-w-4xl aspect-21/9 lg:aspect-video flex justify-center items-center">
+                    <img @load="isLoading = false" x-cloak x-show="!isLoading" :src="activeImage"
+                        class="w-full h-full object-contain" alt="" />
+                    <div x-show="isLoading"
+                        class="m-auto animate-spin inline-block size-8 border-3 border-current border-t-transparent rounded-[999px] text-primary"
+                        role="status" aria-label="loading">
+                        <span class="sr-only">Loading...</span>
                     </div>
-
-                    <div class="flex justify-center items-center lg:justify-start gap-3">
-                        <span class="text-xs text-primary-700">Available in</span>
-                        <?php foreach ($row->assets as $asset): ?>
-                            <button @click="activeImage = 'uploads/img/variants/<?= $asset['variant_filename'] ?>'; isLoading = true"
-                                style="background-color: <?= $asset['color_hex_value'] ?>;"
-                                class="w-4 h-4 rounded-full border"></button>
-                        <?php endforeach; ?>
-                    </div>
-
-                    <div>
-                        <h4 class="font-bold text-xl"><?= $row->variant_model ?></h4>
-                        <?php if ($row->variant_isshowprice): ?>
-                            <!-- Price -->
-                            <p class="text-md text-gray-600">PHP <?= number_format($row->variant_price, 0) ?> MSRP</p>
-                            <p class="text-md text-gray-500">PHP <?= number_format($row->variant_price_month, 0) ?> / mo</p>
-                        <?php endif; ?>
-                    </div>
-
-                    <?php foreach ($row->specifications as $spec): ?>
-                        <p class="text-sm md:text-black text-gray-800 leading-relaxed">
-                            <span class="font-bold"><?= $spec['scat_title'] ?>:</span>
-                            <?= $spec['vs_value'] ?>
-                        </p>
-                    <?php endforeach; ?>
-
-                    <button type="button" @click='showAccordionModal(<?= json_encode($row->fullSpecifications) ?>)'
-                        class="text-sm font-semibold text-red-600 hover:underline">
-                        Full specs →
-                    </button>
                 </div>
+
+                <div class="flex justify-center items-center lg:justify-start gap-3">
+                    <span class="text-xs text-primary-700">Available in</span>
+                    <?php foreach ($row->assets as $asset): ?>
+                    <button
+                        @click="activeImage = 'uploads/img/variants/<?= $asset['variant_filename'] ?>'; isLoading = true"
+                        style="background-color: <?= $asset['color_hex_value'] ?>;"
+                        class="w-4 h-4 rounded-full border"></button>
+                    <?php endforeach; ?>
+                </div>
+
+                <div>
+                    <h4 class="font-bold text-xl"><?= $row->variant_model ?></h4>
+                    <?php if ($row->variant_isshowprice): ?>
+                    <!-- Price -->
+                    <p class="text-md text-gray-600">PHP <?= number_format($row->variant_price, 0) ?> MSRP</p>
+                    <p class="text-md text-gray-500">PHP <?= number_format($row->variant_price_month, 0) ?> / mo</p>
+                    <?php endif; ?>
+                </div>
+
+                <?php foreach ($row->specifications as $spec): ?>
+                <p class="text-sm md:text-black text-gray-800 leading-relaxed">
+                    <span class="font-bold"><?= $spec['scat_title'] ?>:</span>
+                    <?= $spec['vs_value'] ?>
+                </p>
+                <?php endforeach; ?>
+
+                <button type="button" @click='showAccordionModal(<?= json_encode($row->fullSpecifications) ?>)'
+                    class="text-sm font-semibold text-red-600 hover:underline">
+                    Full specs →
+                </button>
+            </div>
             <?php endforeach; ?>
         </div>
 
@@ -186,14 +188,14 @@
                         <div
                             class="hs-carousel-body absolute top-0 bottom-0 start-0 flex flex-nowrap transition-transform duration-700 opacity-0">
                             <?php foreach ($gallery as $photo): ?>
-                                <div class="hs-carousel-slide">
-                                    <!-- <div class="flex justify-center h-full bg-surface p-6">
+                            <div class="hs-carousel-slide">
+                                <!-- <div class="flex justify-center h-full bg-surface p-6">
                                         <span class="self-center text-4xl text-foreground transition duration-700">First slide</span>
                                     </div> -->
-                                    <img class="w-full h-full object-cover transition-transform duration-500 rounded"
-                                        src="/img/gallery/<?= $photo->variant_filename ?>"
-                                        alt="Dashboard and steering wheel" loading="lazy" />
-                                </div>
+                                <img class="w-full h-full object-cover transition-transform duration-500 rounded"
+                                    src="/img/gallery/<?= $photo->variant_filename ?>"
+                                    alt="Dashboard and steering wheel" loading="lazy" />
+                            </div>
                             <?php endforeach ?>
                         </div>
 
@@ -229,15 +231,15 @@
                         <div
                             class="hs-carousel-pagination max-h-[500px] flex flex-row sm:flex-col gap-2 overflow-x-auto sm:overflow-x-hidden sm:overflow-y-auto [&::-webkit-scrollbar]:w-2 [&::-webkit-scrollbar]:h-2 [&::-webkit-scrollbar-thumb]:rounded-none [&::-webkit-scrollbar-track]:bg-scrollbar-track [&::-webkit-scrollbar-thumb]:bg-scrollbar-thumb">
                             <?php foreach ($gallery as $photo): ?>
-                                <div
-                                    class="hs-carousel-pagination-item shrink-0 border border-line-2 rounded-md overflow-hidden cursor-pointer size-20 sm:size-32 hs-carousel-active:border-primary">
-                                    <div class="flex justify-center items-center text-center size-full bg-surface p-2">
-                                        <!-- <span class="text-xs text-foreground transition duration-700">First slide</span> -->
-                                        <img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 rounded"
-                                            src="/img/gallery/<?= $photo->variant_filename ?>"
-                                            alt="Dashboard and steering wheel" loading="lazy" />
-                                    </div>
+                            <div
+                                class="hs-carousel-pagination-item shrink-0 border border-line-2 rounded-md overflow-hidden cursor-pointer size-20 sm:size-32 hs-carousel-active:border-primary">
+                                <div class="flex justify-center items-center text-center size-full bg-surface p-2">
+                                    <!-- <span class="text-xs text-foreground transition duration-700">First slide</span> -->
+                                    <img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 rounded"
+                                        src="/img/gallery/<?= $photo->variant_filename ?>"
+                                        alt="Dashboard and steering wheel" loading="lazy" />
                                 </div>
+                            </div>
                             <?php endforeach ?>
                         </div>
                     </div>
@@ -349,18 +351,18 @@
 
 <!-- At the bottom before </body> -->
 <script>
-    // function changeColor(btn) {
-    //     // Swap image
-    //     document.getElementById('variant-image').src = btn.dataset.image;
+// function changeColor(btn) {
+//     // Swap image
+//     document.getElementById('variant-image').src = btn.dataset.image;
 
-    //     // Reset all buttons
-    //     document.querySelectorAll('[data-image]').forEach(b => {
-    //         b.classList.remove('ring-2', 'ring-offset-2', 'ring-gray-400');
-    //     });
+//     // Reset all buttons
+//     document.querySelectorAll('[data-image]').forEach(b => {
+//         b.classList.remove('ring-2', 'ring-offset-2', 'ring-gray-400');
+//     });
 
-    //     // Highlight selected
-    //     btn.classList.add('ring-2', 'ring-offset-2', 'ring-gray-400');
-    // }
+//     // Highlight selected
+//     btn.classList.add('ring-2', 'ring-offset-2', 'ring-gray-400');
+// }
 </script>
 
 <?= $this->endSection() ?>

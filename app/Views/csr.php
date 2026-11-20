@@ -2,11 +2,12 @@
 <?= $this->section("mainContent"); ?>
 
 <body class="flex flex-col min-h-screen">
-    <section class="relative bg-black text-white">
+    <section class="relative bg-gray-300 text-black">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
             <h1 class="text-4xl md:text-5xl font-bold mt-4 mb-4">CSR Initiatives</h1>
         </div>
     </section>
+
 
 
 
@@ -23,22 +24,22 @@
         </div>
         <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
             <?php foreach ($articles as $row): ?>
-                <article
-                    class="csr-card rounded-2xl overflow-hidden border border-gray-100 bg-white shadow-sm flex flex-col">
-                    <div class="card-img-wrap h-56.25 bg-gray-100">
-                        <img src="/img/csr/<?= $row->csr_image ?>" alt="Hearty Giving" class="w-full h-full object-cover" />
-                    </div>
+            <article
+                class="csr-card rounded-2xl overflow-hidden border border-gray-100 bg-white shadow-sm flex flex-col">
+                <div class="card-img-wrap h-56.25 bg-gray-100">
+                    <img src="/img/csr/<?= $row->csr_image ?>" alt="Hearty Giving" class="w-full h-full object-cover" />
+                </div>
 
-                    <div class="p-6 flex flex-col flex-1">
-                        <time class="text-xs text-toyota-muted font-medium mb-2 block">February 25, 2021</time>
-                        <h3 class="csr-title font-display text-lg font-bold leading-snug mb-3 text-toyota-dark">
-                            <span><?= $row->csr_title ?></span>
-                        </h3>
-                        <p class="text-sm text-toyota-muted leading-relaxed flex-1">
-                            <?= $row->csr_content ?>
-                        </p>
-                    </div>
-                </article>
+                <div class="p-6 flex flex-col flex-1">
+                    <time class="text-xs text-toyota-muted font-medium mb-2 block">February 25, 2021</time>
+                    <h3 class="csr-title font-display text-lg font-bold leading-snug mb-3 text-toyota-dark">
+                        <span><?= $row->csr_title ?></span>
+                    </h3>
+                    <p class="text-sm text-toyota-muted leading-relaxed flex-1">
+                        <?= $row->csr_content ?>
+                    </p>
+                </div>
+            </article>
             <?php endforeach ?>
         </div>
     </section>
