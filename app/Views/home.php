@@ -235,74 +235,51 @@
 </section>
 
 <!-- SERVICE SECTION -->
-<section id="services" class="py-16 md:py-24 bg-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-            <!-- Right -->
-            <div class="relative">
-                <div class="rounded-none overflow-hidden shadow-2xl">
-                    <img src="/img/maintenance-GiBGTARx.jpg" alt="Toyota Service Center"
-                        class="w-full h-auto object-cover" />
-                </div>
-            </div>
-            <!-- Left -->
-            <div>
-                <h2 class="text-4xl md:text-5xl font-bold mt-4 mb-6 text-gray-900">
-                    Schedule Toyota Service
-                </h2>
+<section id="services" aria-labelledby="services-heading"
+    class="relative isolate scroll-mt-24 overflow-hidden bg-zinc-950 text-white">
+    <!-- Workshop photo -->
+    <div class="relative h-56 w-full sm:h-72
+                lg:absolute lg:inset-y-0 lg:right-0 lg:h-full lg:w-[58%]">
+        <img src="/img/maintenance-GiBGTARx.jpg" alt="Toyota Service Center" loading="lazy"
+            class="h-full w-full object-cover object-center">
+    </div>
 
-                <p class="text-gray-600 text-lg mb-6">
-                    Keep your Toyota running at peak performance with our expert
-                    maintenance services. Schedule your appointment online and
-                    experience professional care from certified technicians.
-                </p>
+    <!-- Angled edge between the text and photo on desktop -->
+    <div aria-hidden="true" class="pointer-events-none absolute inset-y-0 left-0 hidden w-[53%]
+               bg-zinc-950 lg:block
+               lg:[clip-path:polygon(0_0,100%_0,82%_100%,0_100%)]"></div>
 
-                <!-- <ul class="space-y-4 mb-8">
-                    <li class="flex items-center gap-3">
-                        <svg class="w-6 h-6 text-red-600 shrink-0" fill="none" stroke="currentColor"
-                            viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7">
-                            </path>
-                        </svg>
-                        <span class="text-gray-700">Certified Toyota Technicians</span>
-                    </li>
+    <!-- Service details -->
+    <div class="relative mx-auto max-w-7xl px-5 py-10 sm:px-8 sm:py-14
+                lg:grid lg:min-h-[30rem] lg:grid-cols-12 lg:items-center lg:py-20">
+        <div class="lg:col-span-5 lg:pr-8">
+            <h2 id="services-heading" class="text-4xl font-bold leading-tight tracking-tight sm:text-5xl">
+                Schedule
+                <span class="block">Toyota Service</span>
+            </h2>
 
-                    <li class="flex items-center gap-3">
-                        <svg class="w-6 h-6 text-red-600 shrink-0" fill="none" stroke="currentColor"
-                            viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7">
-                            </path>
-                        </svg>
-                        <span class="text-gray-700">Genuine Toyota Parts</span>
-                    </li>
+            <p class="mt-5 max-w-md text-base leading-7 text-zinc-300">
+                Keep your Toyota running at peak performance with our expert
+                maintenance services. Schedule your appointment online and
+                experience professional care from certified technicians.
+            </p>
 
-                    <li class="flex items-center gap-3">
-                        <svg class="w-6 h-6 text-red-600 shrink-0" fill="none" stroke="currentColor"
-                            viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7">
-                            </path>
-                        </svg>
-                        <span class="text-gray-700">Quick &amp; Convenient Scheduling</span>
-                    </li>
-                </ul> -->
-
-                <a href="/schedule"
-                    class="group inline-flex min-h-12 items-center justify-center gap-4 rounded-none bg-red-600 px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-red-700 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-red-600">
-
-                    <span>Schedule Maintenance</span>
-
-                    <svg xmlns="http://www.w3.org/2000/svg"
-                        class="h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" viewBox="0 0 24 24"
-                        fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14m-6-6 6 6-6 6" />
-                    </svg>
-                </a>
-            </div>
-
-
+            <a href="/schedule" class="group mt-7 inline-flex min-h-12 w-full items-center
+                       justify-center gap-4 bg-red-600 px-6 py-3 text-sm
+                       font-semibold text-white transition-colors hover:bg-red-700
+                       focus-visible:outline-2 focus-visible:outline-offset-4
+                       focus-visible:outline-white sm:w-auto">
+                Schedule Maintenance
+                <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" class="size-5 shrink-0 motion-safe:transition-transform
+                           motion-safe:group-hover:translate-x-1">
+                    <path d="M5 12h14m-6-6 6 6-6 6" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+            </a>
         </div>
     </div>
 </section>
+
+
 <!-- Team Section -->
 <section id="team" class="bg-white text-black py-16 px-6 scroll-p-24 md:px-16 lg:px-24 xl:px-32">
     <div class="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
