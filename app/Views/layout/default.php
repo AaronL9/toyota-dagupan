@@ -6,7 +6,7 @@ $vite = new Vite();
 $tags = $vite->tags(
     "main.ts",
 )
-    ?>
+?>
 
 <!DOCTYPE html>
 <html lang="en" data-page="<?= isset($page) ? $page : "" ?>">
@@ -30,7 +30,7 @@ $tags = $vite->tags(
 
             <!-- Logo -->
             <a href="/" class="shrink-0" aria-label="Home">
-                <img id="header-logo" class="w-50 h-auto" src="/static/toyota-ilocos-norte-logo.jpeg" alt="Logo" />
+                <img id="header-logo" class="w-30 h-auto" src="/static/toyotadagupan-header-logo.png" alt="Logo" />
             </a>
 
             <!-- Mobile toggle and schedule button -->
@@ -77,12 +77,12 @@ $tags = $vite->tags(
                     ?>
 
                     <?php foreach ($links as $key => $value): ?>
-                    <?php $isActive = url_is($value); ?>
+                        <?php $isActive = url_is($value); ?>
 
-                    <a class="<?= $isActive ? 'underline decoration-red-600 ' : '' ?>text-current font-medium whitespace-nowrap hover:underline hover:decoration-red-600 underline-offset-2"
-                        href="<?= $value ?>">
-                        <?= $key ?>
-                    </a>
+                        <a class="<?= $isActive ? 'underline decoration-red-600 ' : '' ?>text-current font-medium whitespace-nowrap hover:underline hover:decoration-red-600 underline-offset-2"
+                            href="<?= $value ?>">
+                            <?= $key ?>
+                        </a>
                     <?php endforeach; ?>
                 </div>
             </div>
@@ -97,7 +97,7 @@ $tags = $vite->tags(
         <div class="max-w-7xl mx-auto px-4">
             <div class="grid grid-cols-5 md:grid-cols-5 items-start gap-6">
                 <div class="col-span-2">
-                    <img src="/static/" class="h-14 bg-center w-auto" />
+                    <img src="/static/toyotadagupan-header-logo.png" class="h-10 bg-center w-auto" />
                     <p class="text-gray-300 text-sm pt-2">
                         Diversion Road, Brgy. San Miguel, Calasiao, Pangasinan 2418
                     </p>
@@ -122,7 +122,7 @@ $tags = $vite->tags(
                             <a href="contact" class="text-gray-300 hover:text-white">Contact Us</a>
                         </li>
                         <li>
-                            <a href="csr" class="text-gray-300 hover:text-white"> CSR </a>
+                            <a href="csr" class="text-gray-300 hover:text-white">CSR</a>
                         </li>
                     </ul>
                 </div>
@@ -138,7 +138,7 @@ $tags = $vite->tags(
 
                 <div style="width: fit-content"
                     class="w-25 text-gray-300 mt-5 flex flex-col justify-self-end items-end">
-                    <img class="h-30 m-auto" src="static/dop-2.png">
+                    <img class="h-30 m-auto" src="static/CORSeal.png">
                     <a class="text-center w-full text-[10px]" href="privacy-policy">Privacy Policy</a>
                 </div>
             </div>

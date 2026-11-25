@@ -52,7 +52,6 @@
                 </div>
             </div>
 
-
         </div>
     </div>
 
@@ -89,70 +88,70 @@
             <?php $isFirstVehicle = true; ?>
 
             <?php foreach ($vehicles as $row): ?>
-            <?php
+                <?php
                 $isFeatured = $isFirstVehicle;
                 $isFirstVehicle = false;
                 $title = htmlspecialchars($row->vehicle_title, ENT_QUOTES, 'UTF-8');
                 ?>
 
-            <article class="group overflow-hidden rounded-none border border-gray-200
+                <article class="group overflow-hidden rounded-none border border-gray-200
                     <?= $isFeatured
                         ? 'grid bg-gray-950 text-white sm:col-span-2 lg:col-span-3 lg:grid-cols-5'
                         : 'flex flex-col bg-white text-gray-950' ?>">
 
-                <!-- Vehicle photo -->
-                <div class="flex items-center justify-center bg-gray-100
+                    <!-- Vehicle photo -->
+                    <div class="flex items-center justify-center bg-gray-100
                         <?= $isFeatured ? 'p-5 sm:p-8 lg:col-span-3' : 'p-4' ?>">
-                    <img src="uploads/img/variants/<?= htmlspecialchars($row->variant_filename, ENT_QUOTES, 'UTF-8') ?>"
-                        alt="<?= $title ?>" loading="lazy" class="w-full object-contain motion-safe:transition-transform
+                        <img src="uploads/img/variants/<?= htmlspecialchars($row->variant_filename, ENT_QUOTES, 'UTF-8') ?>"
+                            alt="<?= $title ?>" loading="lazy" class="w-full object-contain motion-safe:transition-transform
                                    motion-safe:duration-500 motion-safe:group-hover:scale-[1.03]
                                    <?= $isFeatured ? 'h-56 sm:h-72 lg:h-80' : 'h-48 sm:h-52' ?>">
-                </div>
+                    </div>
 
-                <!-- Vehicle details -->
-                <div class="flex min-w-0 flex-1 flex-col
+                    <!-- Vehicle details -->
+                    <div class="flex min-w-0 flex-1 flex-col
                         <?= $isFeatured ? 'justify-center p-7 sm:p-9 lg:col-span-2' : 'p-6' ?>">
 
-                    <h3 class="break-words font-bold leading-tight tracking-tight
+                        <h3 class="break-words font-bold leading-tight tracking-tight
                             <?= $isFeatured ? 'text-4xl sm:text-5xl' : 'text-2xl' ?>">
-                        <?= $title ?>
-                    </h3>
+                            <?= $title ?>
+                        </h3>
 
-                    <div class="mt-5">
-                        <?php if ($row->variant_isshowprice): ?>
-                        <p class="text-xs font-semibold uppercase tracking-widest
+                        <div class="mt-5">
+                            <?php if ($row->variant_isshowprice): ?>
+                                <p class="text-xs font-semibold uppercase tracking-widest
                                     <?= $isFeatured ? 'text-gray-300' : 'text-gray-500' ?>">
-                            Starting at
-                        </p>
+                                    Starting at
+                                </p>
 
-                        <p class="mt-1 text-2xl font-bold tracking-tight">
-                            <span class="text-sm font-medium">PHP</span>
-                            <?= number_format($row->variant_price, 2) ?><sup class="text-xs">*</sup>
-                        </p>
+                                <p class="mt-1 text-2xl font-bold tracking-tight">
+                                    <span class="text-sm font-medium">PHP</span>
+                                    <?= number_format($row->variant_price, 2) ?><sup class="text-xs">*</sup>
+                                </p>
 
-                        <p class="mt-1 text-sm <?= $isFeatured ? 'text-gray-300' : 'text-gray-600' ?>">
-                            PHP <?= number_format($row->variant_price_month, 2) ?><sup>*</sup> / month
-                        </p>
-                        <?php else: ?>
-                        <p class="text-sm leading-7 <?= $isFeatured ? 'text-gray-300' : 'text-gray-600' ?>">
-                            <?= htmlspecialchars($row->vehicle_tagline ?? '', ENT_QUOTES, 'UTF-8') ?>
-                        </p>
-                        <?php endif; ?>
-                    </div>
+                                <p class="mt-1 text-sm <?= $isFeatured ? 'text-gray-300' : 'text-gray-600' ?>">
+                                    PHP <?= number_format($row->variant_price_month, 2) ?><sup>*</sup> / month
+                                </p>
+                            <?php else: ?>
+                                <p class="text-sm leading-7 <?= $isFeatured ? 'text-gray-300' : 'text-gray-600' ?>">
+                                    <?= htmlspecialchars($row->vehicle_tagline ?? '', ENT_QUOTES, 'UTF-8') ?>
+                                </p>
+                            <?php endif; ?>
+                        </div>
 
-                    <div class="<?= $isFeatured ? 'pt-7' : 'mt-auto pt-6' ?>">
-                        <a href="/<?= url_title($row->vehicle_title, '-', true) ?>"
-                            aria-label="View full specifications for <?= $title ?>" class="inline-flex min-h-11 items-center gap-3 rounded-none text-sm font-semibold
+                        <div class="<?= $isFeatured ? 'pt-7' : 'mt-auto pt-6' ?>">
+                            <a href="/<?= url_title($row->vehicle_title, '-', true) ?>"
+                                aria-label="View full specifications for <?= $title ?>" class="inline-flex min-h-11 items-center gap-3 rounded-none text-sm font-semibold
                                        focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-red-600
                                        <?= $isFeatured
-                                           ? 'bg-red-600 px-5 text-white hover:bg-red-700'
-                                           : 'text-gray-950 hover:text-red-600' ?>">
-                            Full Specs
-                            <span aria-hidden="true">→</span>
-                        </a>
+                                            ? 'bg-red-600 px-5 text-white hover:bg-red-700'
+                                            : 'text-gray-950 hover:text-red-600' ?>">
+                                Full Specs
+                                <span aria-hidden="true">→</span>
+                            </a>
+                        </div>
                     </div>
-                </div>
-            </article>
+                </article>
             <?php endforeach; ?>
         </div>
 
