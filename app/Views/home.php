@@ -10,47 +10,15 @@
         <div
             class="hs-carousel-body absolute bottom-0 start-0 top-0 flex flex-nowrap opacity-0 transition-transform duration-700">
 
-            <!-- Slide 1 -->
-            <div class="hs-carousel-slide">
-                <div class="relative h-full">
-                    <img src="/img/carousel2-ExbEmYc-.jpg" alt="Toyota featured promotion" fetchpriority="high"
-                        class="h-full w-full object-cover" />
-
-                    <div class="pointer-events-none absolute inset-0 bg-black/30"></div>
-                </div>
-            </div>
-
-            <!-- Slide 2 -->
-            <div class="hs-carousel-slide">
-                <div class="relative h-full">
-                    <img src="/images/slide-2.jpg" alt="Beach at sunset" class="h-full w-full object-cover" />
-
-                    <div class="pointer-events-none absolute inset-0 bg-black/40"></div>
-
-                    <div class="absolute inset-0 flex items-center">
-                        <div class="mx-auto w-full max-w-7xl px-16 sm:px-20 lg:px-24">
-                            <div class="max-w-2xl text-white">
-                            </div>
-                        </div>
+            <?php foreach ($banners as $row): ?>
+                <div class="hs-carousel-slide">
+                    <div class="relative h-full">
+                        <img src="/uploads/img/banners/<?= esc($row->banner_photo) ?>"
+                            alt="Banner"
+                            class="h-full w-full object-cover" />
                     </div>
                 </div>
-            </div>
-
-            <!-- Slide 3 -->
-            <div class="hs-carousel-slide">
-                <div class="relative h-full">
-                    <img src="/images/slide-2.jpg" alt="Beach at sunset" class="h-full w-full object-cover" />
-
-                    <div class="pointer-events-none absolute inset-0 bg-black/40"></div>
-
-                    <div class="absolute inset-0 flex items-center">
-                        <div class="mx-auto w-full max-w-7xl px-16 sm:px-20 lg:px-24">
-                            <div class="max-w-2xl text-white">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <?php endforeach; ?>
 
         </div>
     </div>
@@ -183,7 +151,7 @@
             </h1>
 
             <p class="mt-4 text-base sm:text-lg/relaxed text-white/90">
-                Welcome to Toyota Baguio
+                Welcome to Toyota Dagupan
             </p>
         </div>
     </div>
@@ -305,7 +273,7 @@
             </span>
 
             <!-- When your photo is ready, remove the span above and uncomment this image. -->
-            <img src="/img/team-photo.jpg" alt="Toyota Baguio City marketing team" loading="lazy"
+            <img src="/img/team-photo.jpg" alt="Toyota Dagupan City marketing team" loading="lazy"
                 class="absolute inset-0 h-full w-full object-cover object-center" />
 
         </div>
@@ -354,7 +322,7 @@
 
     <!-- Maps Section -->
     <div class="mx-auto mt-12 w-full max-w-7xl overflow-hidden rounded-none border border-gray-200 bg-gray-100">
-        <iframe title="Map showing Toyota Baguio City"
+        <iframe title="Map showing Toyota Dagupan City"
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4708.682025810466!2d120.35196117588455!3d16.021087840723517!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x339142aa96efffff%3A0x65e74340954e7a4a!2sTOYOTA%20DAGUPAN%20CITY%20Inc!5e1!3m2!1sen!2sph!4v1795151057079!5m2!1sen!2sph"
             class="block h-72 w-full border-0 md:h-96" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
             allowfullscreen>
