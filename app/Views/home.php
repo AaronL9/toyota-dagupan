@@ -2,44 +2,57 @@
 <?= $this->section("mainContent"); ?>
 
 <!-- CAROUSEL -->
-<section id="home" aria-label="Featured promotions" data-hs-carousel='{
+<section id="home" aria-label="Featured promotions"
+    data-hs-carousel='{
         "loadingClasses": "opacity-0",
+        "dotsItemClasses": "hs-carousel-active:bg-red-600 hs-carousel-active:border-red-600 size-3 border border-white/70 rounded-full cursor-pointer transition-colors",
+        "isAutoPlay": true,
         "isInfiniteLoop": true
-    }' class="relative bg-black">
-    <div class="hs-carousel relative h-[320px] w-full overflow-hidden sm:h-[440px] md:h-[520px] lg:h-[640px]">
-        <div
-            class="hs-carousel-body absolute bottom-0 start-0 top-0 flex flex-nowrap opacity-0 transition-transform duration-700">
+    }'
+    class="relative bg-black">
 
-            <?php foreach ($banners as $row): ?>
+    <div class="hs-carousel relative h-[320px] w-full overflow-hidden sm:h-[440px] md:h-[520px] lg:h-[640px]">
+
+        <!-- Carousel Body -->
+        <div class="hs-carousel-body absolute top-0 bottom-0 start-0 flex flex-nowrap opacity-0 transition-transform duration-700">
+
+            <?php foreach ($banners as $i => $row): ?>
                 <div class="hs-carousel-slide">
                     <div class="relative h-full">
                         <img src="/uploads/img/banners/<?= esc($row->banner_photo) ?>"
-                            alt="Banner"
+                            alt="Banner <?= $i + 1 ?>"
+                            <?= $i === 0 ? 'fetchpriority="high"' : 'loading="lazy"' ?>
                             class="h-full w-full object-cover" />
                     </div>
                 </div>
             <?php endforeach; ?>
 
         </div>
+        <!-- End Carousel Body -->
     </div>
 
     <!-- Previous -->
     <button type="button" aria-label="Previous slide"
-        class="hs-carousel-prev absolute start-3 top-1/2 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border border-white/30 bg-black/30 text-white backdrop-blur-sm transition-colors hover:bg-red-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white sm:start-6 sm:h-12 sm:w-12">
-        <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"
+        class="hs-carousel-prev hs-carousel-disabled:opacity-50 hs-carousel-disabled:cursor-default absolute start-3 top-1/2 z-10 inline-flex size-10 -translate-y-1/2 items-center justify-center rounded-full border border-white/30 bg-black/30 text-white backdrop-blur-sm transition-colors hover:bg-red-600 focus:outline-hidden focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white sm:start-6 sm:size-12">
+        <svg class="size-5 shrink-0" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+            fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"
             aria-hidden="true">
-            <path d="m15 18-6-6 6-6" stroke-linecap="round" stroke-linejoin="round" />
+            <path d="m15 18-6-6 6-6" />
         </svg>
     </button>
 
     <!-- Next -->
     <button type="button" aria-label="Next slide"
-        class="hs-carousel-next absolute end-3 top-1/2 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border border-white/30 bg-black/30 text-white backdrop-blur-sm transition-colors hover:bg-red-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white sm:end-6 sm:h-12 sm:w-12">
-        <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"
+        class="hs-carousel-next hs-carousel-disabled:opacity-50 hs-carousel-disabled:cursor-default absolute end-3 top-1/2 z-10 inline-flex size-10 -translate-y-1/2 items-center justify-center rounded-full border border-white/30 bg-black/30 text-white backdrop-blur-sm transition-colors hover:bg-red-600 focus:outline-hidden focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white sm:end-6 sm:size-12">
+        <svg class="size-5 shrink-0" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+            fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"
             aria-hidden="true">
-            <path d="m9 18 6-6-6-6" stroke-linecap="round" stroke-linejoin="round" />
+            <path d="m9 18 6-6-6-6" />
         </svg>
     </button>
+
+    <!-- Pagination -->
+    <div class="hs-carousel-pagination absolute start-0 end-0 bottom-4 z-10 flex justify-center gap-x-2"></div>
 </section>
 
 <!-- Vehicle Cards Section -->
