@@ -220,7 +220,7 @@
     <!-- Workshop photo -->
     <div class="relative h-56 w-full sm:h-72
                 lg:absolute lg:inset-y-0 lg:right-0 lg:h-full lg:w-[58%]">
-        <img src="/img/maintenance-GiBGTARx.jpg" alt="Toyota Service Center" loading="lazy"
+        <img src="/static/maintenance-GiBGTARx.jpg" alt="Toyota Service Center" loading="lazy"
             class="h-full w-full object-cover object-center">
     </div>
 
